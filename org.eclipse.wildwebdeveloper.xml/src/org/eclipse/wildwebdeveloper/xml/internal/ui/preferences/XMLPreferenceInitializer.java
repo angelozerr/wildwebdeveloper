@@ -47,7 +47,7 @@ public class XMLPreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		// Client settings
 		STORE.setDefault(XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS, true);
-
+		//STORE.setDefault(AbstractDecoratedTextEditorPreferenceConstants, false);
 		// Server settings
 		STORE.setDefault(XML_PREFERENCES_DOWNLOAD_EXTERNAL_RESOURCES.preferenceId, true);
 		STORE.setDefault(XML_PREFERENCES_CATAGLOGS.preferenceId, "");

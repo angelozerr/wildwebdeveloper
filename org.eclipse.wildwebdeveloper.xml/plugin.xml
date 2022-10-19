@@ -238,4 +238,12 @@
             class="org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceInitializer">
         </initializer>
    </extension>
+   
+   <extension
+         point="org.eclipse.ui.genericeditor.preferenceStoreProviders">
+      <provider
+            class="org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceStoreProvider"
+            contentType="org.eclipse.core.runtime.xml">
+      </provider>
+   </extension>
 </plugin>
