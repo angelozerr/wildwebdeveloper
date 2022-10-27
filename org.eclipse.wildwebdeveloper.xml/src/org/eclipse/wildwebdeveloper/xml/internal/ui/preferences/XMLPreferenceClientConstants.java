@@ -18,5 +18,6 @@ package org.eclipse.wildwebdeveloper.xml.internal.ui.preferences;
  */
 public class XMLPreferenceClientConstants {
 
+	public static final String EDITOR_SPACES_FOR_TABS = "xml.insertSpaces";
 	public static final String XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS = "completion/autoCloseTags";
 }

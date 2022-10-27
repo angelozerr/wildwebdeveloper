@@ -11,6 +11,7 @@
  *******************************************************************************/
 package org.eclipse.wildwebdeveloper.xml.internal.ui.preferences;
 
+import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceClientConstants.EDITOR_SPACES_FOR_TABS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceClientConstants.XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceServerConstants.XML_PREFERENCES_CATAGLOGS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceServerConstants.XML_PREFERENCES_CODELENS_ENABLED;
@@ -33,6 +34,8 @@ import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPrefer
 
 import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
 import org.eclipse.jface.preference.IPreferenceStore;
+import org.eclipse.ui.editors.text.EditorsUI;
+import org.eclipse.ui.texteditor.AbstractDecoratedTextEditorPreferenceConstants;
 import org.eclipse.wildwebdeveloper.xml.internal.Activator;
 
 /**
@@ -47,7 +50,9 @@ public class XMLPreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		// Client settings
 		STORE.setDefault(XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS, true);
-		//STORE.setDefault(AbstractDecoratedTextEditorPreferenceConstants, false);
+		STORE.setDefault(EDITOR_SPACES_FOR_TABS,
+				EditorsUI.getPreferenceStore()
+						.getBoolean(AbstractDecoratedTextEditorPreferenceConstants.EDITOR_SPACES_FOR_TABS));
 		// Server settings
 		STORE.setDefault(XML_PREFERENCES_DOWNLOAD_EXTERNAL_RESOURCES.preferenceId, true);
 		STORE.setDefault(XML_PREFERENCES_CATAGLOGS.preferenceId, "");

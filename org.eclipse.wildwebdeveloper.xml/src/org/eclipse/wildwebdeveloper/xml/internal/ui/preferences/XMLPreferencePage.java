@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.eclipse.wildwebdeveloper.xml.internal.ui.preferences;
 
+import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceClientConstants.EDITOR_SPACES_FOR_TABS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceClientConstants.XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceServerConstants.XML_PREFERENCES_DOWNLOAD_EXTERNAL_RESOURCES;
 
@@ -27,7 +28,6 @@ import org.eclipse.swt.widgets.Link;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.IWorkbenchPreferencePage;
 import org.eclipse.ui.preferences.IWorkbenchPreferenceContainer;
-import org.eclipse.wildwebdeveloper.xml.internal.Activator;
 import org.eclipse.wildwebdeveloper.xml.internal.ui.Messages;
 
 /**
@@ -65,7 +65,7 @@ public class XMLPreferencePage extends FieldEditorPreferencePage implements IWor
 
 	@Override
 	public void init(IWorkbench workbench) {
-		setPreferenceStore(Activator.getDefault().getPreferenceStore());
+		setPreferenceStore(XMLPreferenceStoreProvider.PREFERENCE_STORE_MAPPING);
 	}
 
 	@Override
@@ -74,6 +74,8 @@ public class XMLPreferencePage extends FieldEditorPreferencePage implements IWor
 				Messages.XMLPreferencePage_downloadExternalResources_enabled, getFieldEditorParent()));
 		addField(new BooleanFieldEditor(XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS,
 				Messages.XMLPreferencePage_completion_autoCloseTags, getFieldEditorParent()));
+		addField(new BooleanFieldEditor(EDITOR_SPACES_FOR_TABS,
+				"Insert spaces", getFieldEditorParent()));
 
 	}
 }
