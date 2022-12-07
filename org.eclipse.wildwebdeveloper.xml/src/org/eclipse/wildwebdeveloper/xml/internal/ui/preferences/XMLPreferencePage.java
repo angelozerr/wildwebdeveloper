@@ -12,6 +12,7 @@
  *******************************************************************************/
 package org.eclipse.wildwebdeveloper.xml.internal.ui.preferences;
 
+import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceClientConstants.XML_PREFERENCES_EDITOR_SPACES_FOR_TABS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceClientConstants.XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS;
 import static org.eclipse.wildwebdeveloper.xml.internal.ui.preferences.XMLPreferenceServerConstants.XML_PREFERENCES_DOWNLOAD_EXTERNAL_RESOURCES;
 
@@ -70,6 +71,7 @@ public class XMLPreferencePage extends FieldEditorPreferencePage implements IWor
 
 	@Override
 	protected void createFieldEditors() {
+		addField(new BooleanFieldEditor(XML_PREFERENCES_EDITOR_SPACES_FOR_TABS, "Insert spaces for tabs", getFieldEditorParent()));
 		addField(new BooleanFieldEditor(XML_PREFERENCES_DOWNLOAD_EXTERNAL_RESOURCES.preferenceId,
 				Messages.XMLPreferencePage_downloadExternalResources_enabled, getFieldEditorParent()));
 		addField(new BooleanFieldEditor(XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS,

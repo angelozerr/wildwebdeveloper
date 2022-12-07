@@ -18,5 +18,7 @@ package org.eclipse.wildwebdeveloper.xml.internal.ui.preferences;
  */
 public class XMLPreferenceClientConstants {
 
+	public final static String XML_PREFERENCES_EDITOR_SPACES_FOR_TABS= "spacesForTabs"; //$NON-NLS-1$
+
 	public static final String XML_PREFERENCES_COMPLETION_AUTO_CLOSE_TAGS = "completion/autoCloseTags";
 }
